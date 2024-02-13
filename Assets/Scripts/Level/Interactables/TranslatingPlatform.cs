@@ -12,6 +12,7 @@ public class TranslatingPlatform : BaseInteractable
     private Vector2 endPoint;
 
     private bool isMovingToEnd = false;
+    private bool isMoving = false;
 
     private void Start()
     {
@@ -22,18 +23,24 @@ public class TranslatingPlatform : BaseInteractable
     public override void Activate()
     {
         base.Activate();
-
-        Vector3 targetPosition = isMovingToEnd ? startPoint : endPoint;
-
-        while (true)
+        if (!isMoving)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, translateSpeed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, targetPosition) < 0.01f)
-            {
-                isMovingToEnd = !isMovingToEnd;
-                break;
-            }
+            isMoving = true;
+            Vector3 targetPosition = isMovingToEnd ? startPoint : endPoint;
+            StartCoroutine(TranslateToPosition(targetPosition));
+            isMovingToEnd = !isMovingToEnd;
         }
+        
     }
 
+    private IEnumerator TranslateToPosition(Vector3 targetPosition)
+    {
+        while (Vector2.Distance(transform.position, targetPosition) > 0.01f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, translateSpeed * Time.deltaTime);
+
+            yield return null;
+        }
+        isMoving = false;
+    }
 }
