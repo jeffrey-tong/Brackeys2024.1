@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerLocomotion : MonoBehaviour
@@ -15,7 +17,9 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float maxSpeed = 15.0f;
 
     [Header("Air Mobility")]
+    [SerializeField] private float airAcceleration = 50f;
     [SerializeField] private float airDeceleration = 50f;
+    [SerializeField] private float maxFallSpeed = -15f;
 
     [Header("Jump Strength")]
     [SerializeField] private float jumpForce = 5.0f;
@@ -41,7 +45,10 @@ public class PlayerLocomotion : MonoBehaviour
 
 
     // Anim hashes
-    private int animIsMovingHash;
+    private static int animIsMovingHash;
+    private static int animGroundHash;
+    private static int animYVelHash;
+    private static int animJumpHash;
 
     private void Awake()
     {
@@ -49,6 +56,9 @@ public class PlayerLocomotion : MonoBehaviour
         if (m_Animator == null) m_Animator = GetComponentInChildren<Animator>();
 
         animIsMovingHash = Animator.StringToHash("IsMoving");
+        animGroundHash = Animator.StringToHash("Ground");
+        animYVelHash = Animator.StringToHash("YVel");
+        animJumpHash = Animator.StringToHash("Jump");
     }
 
     private void Update()
@@ -61,18 +71,23 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         HandleAirVelocity();
 
-        float translation = currentSpeed * xInput;
-        m_RigidBody.velocity = new Vector2(translation, m_RigidBody.velocity.y);
+        float translation = currentSpeed;
+        desiredVelocity.x = translation;
+
+        m_RigidBody.velocity = desiredVelocity;
     }
 
     private void UpdateSpeed()
     {
         bool isMoving = Mathf.Abs(xInput) > Mathf.Epsilon;
-        float targetSpeed = isMoving ? maxSpeed : 0f;
-        float targetAccel = isMoving ? acceleration : isGrounded ? deceleration : airDeceleration;
+        float targetSpeed = isMoving ? maxSpeed * xInput: 0f;
+
+        float accel = isGrounded ? acceleration : airAcceleration;
+        float decel = isGrounded ? deceleration : airDeceleration;
+
+        float targetAccel = isMoving ? accel : decel;
 
         currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, targetAccel * Time.deltaTime);
     }
@@ -111,21 +126,33 @@ public class PlayerLocomotion : MonoBehaviour
             bool isMoving = Mathf.Abs(currentSpeed) > Mathf.Epsilon;
             m_Animator.SetBool(animIsMovingHash, isMoving);
         }
+
+        m_Animator.SetBool(animGroundHash, isGrounded);
+        m_Animator.SetFloat(animYVelHash, m_RigidBody.velocity.y);
     }
 
     private void HandleAirVelocity()
     {
-        if (isGrounded == true) return;
+        if (isGrounded == true && isJumping == false)
+        {
+            desiredVelocity.y = -2;
+            return;
+
+        }
+
+        float gravity = -Physics2D.gravity.y;
 
         if (m_RigidBody.velocity.y > 0 && !jumpRequest)
         {
-            m_RigidBody.AddForce(Physics2D.gravity * lowJumpMultiplier);
+            gravity *= lowJumpMultiplier;
         }
 
         if (m_RigidBody.velocity.y < 0)
         {
-            m_RigidBody.AddForce(Physics2D.gravity * fallMultiplier);
+            gravity *= fallMultiplier;
         }
+
+        desiredVelocity.y = Mathf.MoveTowards(desiredVelocity.y, maxFallSpeed, gravity * Time.fixedDeltaTime);
     }
 
     public void SetXInput(float newInput)
@@ -139,8 +166,9 @@ public class PlayerLocomotion : MonoBehaviour
         bool checkCoyote = Time.time <= timeSinceLastGrounded + coyoteTime && !isJumping;
 
         if (isGrounded || checkCoyote)
-        {           
-            m_RigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        {
+            desiredVelocity.y = jumpForce;
+            m_Animator.SetTrigger(animJumpHash);
             isJumping = true;
         }
 
@@ -155,3 +183,4 @@ public class PlayerLocomotion : MonoBehaviour
         jumpRequest = false;
     }
 }
+
