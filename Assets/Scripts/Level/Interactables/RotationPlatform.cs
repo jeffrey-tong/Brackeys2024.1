@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public enum RotationMode
 {
@@ -25,65 +27,81 @@ public class RotationPlatform : BaseInteractable
     [SerializeField] private float rotationSpeed;
 
     private Vector2 pivotPoint;
-    private bool isRotatingToEnd = true;
-    private float remainingRotation;
+    private bool isRotatingToEnd = false;
+    private bool isRotating = false;
 
     private void Start()
     {
         pivotPoint = new Vector2(pivotTransform.position.x, pivotTransform.position.y);
+        // Set the initial rotation to rotationAngleBase around the pivot point
+        Vector3 pivotOffset = transform.position - (Vector3)pivotPoint;
+        transform.position = (Vector3)pivotPoint + Quaternion.Euler(0f, 0f, rotationAngleBase) * pivotOffset;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotationAngleBase);
     }
 
     public override void Activate()
     {
         base.Activate();
-
-        switch (rotationMode)
+        float targetRotation;
+        if (!isRotating)
         {
-            case RotationMode.TOGGLE:
-                remainingRotation = isRotatingToEnd ? rotationAngle : rotationAngleBase;
-                break;
-            case RotationMode.CONTINUOUS:
-                remainingRotation = rotationAngle;
-                RotateContinuous();
-                break;
-            default:
-                break;
+            isRotating = true;
+            switch (rotationMode)
+            {
+                case RotationMode.TOGGLE:
+                    targetRotation = isRotatingToEnd ? rotationAngleBase : rotationAngle;
+                    StartCoroutine(RotateToggle(targetRotation));
+                    isRotatingToEnd = !isRotatingToEnd;
+                    break;
+                case RotationMode.CONTINUOUS:
+                    targetRotation = rotationAngle;
+                    float rotDirection = rotationDirection == RotationDirection.CLOCKWISE ? -1 : 1;
+                    StartCoroutine(RotateContinuous(targetRotation, rotDirection));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    private void RotateToggle()
+    private IEnumerator RotateToggle(float targetRotation)
     {
-        while (remainingRotation > 0f)
+        float startRotation = transform.rotation.eulerAngles.z;
+
+        float shortestPath = Mathf.DeltaAngle(startRotation, targetRotation);
+
+        float step = 0f;
+        float rotationDirection = Mathf.Sign(shortestPath);
+
+        while (Mathf.Abs(step) < Mathf.Abs(shortestPath))
         {
-            float rotationAmount = (rotationDirection == RotationDirection.CLOCKWISE ? 1 : -1) * rotationSpeed * Time.deltaTime;
-            rotationAmount = Mathf.Clamp(rotationAmount, -remainingRotation, remainingRotation);
+            float rotationAmount = rotationSpeed * Time.deltaTime * rotationDirection;
+            step += Mathf.Abs(rotationAmount);
 
             // Rotate around the pivot point
             transform.RotateAround((Vector3)pivotPoint, Vector3.forward, rotationAmount);
 
-            // Recalculate the offset after rotation
-            Vector2 offset = (Vector2)pivotPoint - (Vector2)transform.position;
-
-            // Update remainingRotation
-            remainingRotation -= Mathf.Abs(rotationAmount);
+            yield return null;
         }
+        isRotating = false;
     }
 
-    private void RotateContinuous()
+    private IEnumerator RotateContinuous(float targetRotation, float rotDirection)
     {
-        while (remainingRotation > 0f)
+        float elapsedRotation = 0f;
+
+        while (Mathf.Abs(elapsedRotation) < Mathf.Abs(targetRotation))
         {
-            float rotationAmount = (rotationDirection == RotationDirection.CLOCKWISE ? 1 : -1) * rotationSpeed * Time.deltaTime;
-            rotationAmount = Mathf.Clamp(rotationAmount, -remainingRotation, remainingRotation);
+            float rotationAmount = rotationSpeed * rotDirection * Time.deltaTime;
 
             // Rotate around the pivot point
             transform.RotateAround((Vector3)pivotPoint, Vector3.forward, rotationAmount);
 
-            // Recalculate the offset after rotation
-            Vector2 offset = (Vector2)pivotPoint - (Vector2)transform.position;
+            // Update elapsedRotation
+            elapsedRotation += Mathf.Abs(rotationAmount);
 
-            // Update remainingRotation
-            remainingRotation -= Mathf.Abs(rotationAmount);
+            yield return null;
         }
+        isRotating = false;
     }
 }
