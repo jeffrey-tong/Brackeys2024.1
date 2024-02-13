@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f75137d255e0fee4baad8eede53243e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   startTransform: {fileID: 174697167507118124}
   endTransform: {fileID: 801830434956166136}
   translateSpeed: 5

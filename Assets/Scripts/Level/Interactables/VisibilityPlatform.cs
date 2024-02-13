@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class VisibilityPlatform : BaseInteractable
 {
-    private void Start()
-    {
-
-    }
     public override void Activate()
     {
         base.Activate();

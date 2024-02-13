@@ -5,16 +5,16 @@ using System;
 
 public class TestInteractableManager : MonoBehaviour
 {
-    [SerializeField] private List<MonoBehaviour> interactables = new List<MonoBehaviour>();
+    [SerializeField] private List<BaseTrigger> triggers = new List<BaseTrigger>();
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            foreach(IInteractable interactable in interactables)
+            foreach(BaseTrigger trigger in triggers)
             {
-                interactable.Activate();
+                trigger.Trigger();
             }
         }
     }
