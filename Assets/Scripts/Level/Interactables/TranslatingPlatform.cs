@@ -12,7 +12,6 @@ public class TranslatingPlatform : BaseInteractable
     private Vector2 endPoint;
 
     private bool isMovingToEnd = false;
-    private bool isMoving = false;
 
     private void Start()
     {
@@ -23,9 +22,9 @@ public class TranslatingPlatform : BaseInteractable
     public override void Activate()
     {
         base.Activate();
-        if (!isMoving)
+        if (canInteract)
         {
-            isMoving = true;
+            canInteract = false;
             Vector3 targetPosition = isMovingToEnd ? startPoint : endPoint;
             StartCoroutine(TranslateToPosition(targetPosition));
             isMovingToEnd = !isMovingToEnd;
@@ -41,6 +40,6 @@ public class TranslatingPlatform : BaseInteractable
 
             yield return null;
         }
-        isMoving = false;
+        canInteract = true;
     }
 }

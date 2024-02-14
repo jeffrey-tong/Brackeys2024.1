@@ -2,24 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
-using UnityEngine.UIElements;
-
-public enum RotationMode
-{
-    TOGGLE,
-    CONTINUOUS
-}
-
-public enum RotationDirection
-{
-    CLOCKWISE,
-    COUNTERCLOCKWISE
-}
 
 public class RotationPlatform : BaseInteractable
 {
     [SerializeField] private RotationDirection rotationDirection = RotationDirection.CLOCKWISE;
-    [SerializeField] private RotationMode rotationMode = RotationMode.TOGGLE;
+    [SerializeField] private RotationMode rotationMode = RotationMode.PINGPONG;
 
     [SerializeField] private Transform pivotTransform;
     [SerializeField] private float rotationAngleBase;
@@ -27,8 +14,10 @@ public class RotationPlatform : BaseInteractable
     [SerializeField] private float rotationSpeed;
 
     private Vector2 pivotPoint;
-    private bool isRotatingToEnd = false;
-    private bool isRotating = false;
+    private bool isPingPongToEnd = false;
+
+    private Coroutine rotateContinuousCoroutine;
+    private bool isRotatingContinuous = false;
 
     private void Start()
     {
@@ -43,20 +32,33 @@ public class RotationPlatform : BaseInteractable
     {
         base.Activate();
         float targetRotation;
-        if (!isRotating)
-        {
-            isRotating = true;
+        float rotDirection = rotationDirection == RotationDirection.CLOCKWISE ? -1 : 1;
+        if (canInteract)
+        { 
             switch (rotationMode)
             {
-                case RotationMode.TOGGLE:
-                    targetRotation = isRotatingToEnd ? rotationAngleBase : rotationAngle;
-                    StartCoroutine(RotateToggle(targetRotation));
-                    isRotatingToEnd = !isRotatingToEnd;
+                case RotationMode.PINGPONG:
+                    canInteract = false;
+                    targetRotation = isPingPongToEnd ? rotationAngleBase : rotationAngle;
+                    StartCoroutine(RotatePingPong(targetRotation));
+                    isPingPongToEnd = !isPingPongToEnd;
+                    break;
+                case RotationMode.INCREMENTAL:
+                    canInteract = false;
+                    targetRotation = rotationAngle;
+                    rotDirection = rotationDirection == RotationDirection.CLOCKWISE ? -1 : 1;
+                    StartCoroutine(RotateIncremental(targetRotation, rotDirection));
                     break;
                 case RotationMode.CONTINUOUS:
-                    targetRotation = rotationAngle;
-                    float rotDirection = rotationDirection == RotationDirection.CLOCKWISE ? -1 : 1;
-                    StartCoroutine(RotateContinuous(targetRotation, rotDirection));
+                    if (isRotatingContinuous)
+                    {
+                        StopCoroutine(rotateContinuousCoroutine);
+                    }
+                    else
+                    {
+                        rotateContinuousCoroutine = StartCoroutine(RotateContinuous());
+                    }
+                    isRotatingContinuous = !isRotatingContinuous;
                     break;
                 default:
                     break;
@@ -64,7 +66,7 @@ public class RotationPlatform : BaseInteractable
         }
     }
 
-    private IEnumerator RotateToggle(float targetRotation)
+    private IEnumerator RotatePingPong(float targetRotation)
     {
         float startRotation = transform.rotation.eulerAngles.z;
 
@@ -83,10 +85,10 @@ public class RotationPlatform : BaseInteractable
 
             yield return null;
         }
-        isRotating = false;
+        canInteract = true;
     }
 
-    private IEnumerator RotateContinuous(float targetRotation, float rotDirection)
+    private IEnumerator RotateIncremental(float targetRotation, float rotDirection)
     {
         float elapsedRotation = 0f;
 
@@ -102,6 +104,31 @@ public class RotationPlatform : BaseInteractable
 
             yield return null;
         }
-        isRotating = false;
+        canInteract = true;
     }
+
+    private IEnumerator RotateContinuous()
+    {
+        float rotDirection = rotationDirection == RotationDirection.CLOCKWISE ? -1 : 1;
+        while (true)
+        {
+            // Rotate around the pivot point continuously
+            transform.RotateAround((Vector3)pivotPoint, Vector3.forward, rotationSpeed * rotDirection * Time.deltaTime);
+
+            yield return null;
+        }
+    }
+}
+
+public enum RotationMode
+{
+    PINGPONG,
+    INCREMENTAL,
+    CONTINUOUS
+}
+
+public enum RotationDirection
+{
+    CLOCKWISE,
+    COUNTERCLOCKWISE
 }

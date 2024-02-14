@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Triggers
+    uniqueID: 503930579
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
