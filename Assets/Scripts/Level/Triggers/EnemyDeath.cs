@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class EnemyDeath : BaseTrigger
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Trigger()
     {
-        
+        base.Trigger();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            OnDestroyed();
+        }
+    }
+
+    private void OnDestroyed()
+    {
+        Trigger();
+        Destroy(gameObject);
     }
 }

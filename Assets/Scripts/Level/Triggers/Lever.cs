@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class Lever : BaseTrigger
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Trigger()
     {
-        
+        base.Trigger();
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool canTrigger = false;
+    private void Update()
     {
-        
+        if (canTrigger)
+        {
+            if (Input.GetKeyDown(KeyCode.E)){
+                Trigger();
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canTrigger = false;
+        }
     }
 }
