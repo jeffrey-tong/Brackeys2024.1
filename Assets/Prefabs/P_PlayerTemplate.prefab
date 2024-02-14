@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Locomotion: {fileID: 6855527055592640565}
   m_Ability: {fileID: 0}
+  CharDataSO: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
 --- !u!114 &6855527055592640565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +72,8 @@ MonoBehaviour:
   airAcceleration: 50
   airDeceleration: 100
   maxFallSpeed: -15
-  jumpForce: 10
+  jumpHeight: 4
+  jumpDuration: 0.6
   lowJumpMultiplier: 3
   fallMultiplier: 4
   coyoteTime: 0.2
@@ -94,7 +96,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 8017a014917d07742ad9702975654ee8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2

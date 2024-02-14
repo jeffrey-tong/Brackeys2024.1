@@ -17,15 +17,22 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private float maxSpeed = 15.0f;
 
     [Header("Air Mobility")]
+    [Tooltip("Time it takes to build up speed in the air")]
     [SerializeField] private float airAcceleration = 50f;
+    [Tooltip("Time it takes to lose speed in the air")]
     [SerializeField] private float airDeceleration = 50f;
     [SerializeField] private float maxFallSpeed = -15f;
 
-    [Header("Jump Strength")]
-    [SerializeField] private float jumpForce = 5.0f;
+    [Header("Jump Attribute")]
+    [SerializeField] private float jumpHeight = 4f;
+    [Tooltip("The time in seconds, it takes for the character to reach desired jumpHeight")]
+    [SerializeField] private float jumpDuration = 0.3f;
     [SerializeField] private float lowJumpMultiplier = 2.5f;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float coyoteTime = 0.2f;
+
+    private float jumpInitialVelocity;
+    private float jumpGravity;
 
     [Header("Ground Check")]
     [SerializeField] private float groundCheckDist = 0.5f;
@@ -55,10 +62,15 @@ public class PlayerLocomotion : MonoBehaviour
         if (m_RigidBody == null) m_RigidBody = GetComponent<Rigidbody2D>();
         if (m_Animator == null) m_Animator = GetComponentInChildren<Animator>();
 
+        // Storing anim hashes because they are more optimal
         animIsMovingHash = Animator.StringToHash("IsMoving");
         animGroundHash = Animator.StringToHash("Ground");
         animYVelHash = Animator.StringToHash("YVel");
         animJumpHash = Animator.StringToHash("Jump");
+
+        // Using kinematics to calculate values
+        jumpInitialVelocity = (2 * jumpHeight) / jumpDuration;
+        jumpGravity = (-2 * jumpHeight) / (Mathf.Pow(jumpDuration, 2));
     }
 
     private void Update()
@@ -110,6 +122,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             isGrounded = true;
             isJumping = false;
+            m_Animator.ResetTrigger(animJumpHash);
         }
     }
 
@@ -133,14 +146,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void HandleAirVelocity()
     {
-        if (isGrounded == true && isJumping == false)
-        {
-            desiredVelocity.y = -2;
-            return;
-
-        }
-
-        float gravity = -Physics2D.gravity.y;
+        float gravity = -jumpGravity;
 
         if (m_RigidBody.velocity.y > 0 && !jumpRequest)
         {
@@ -167,7 +173,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (isGrounded || checkCoyote)
         {
-            desiredVelocity.y = jumpForce;
+            desiredVelocity.y = jumpInitialVelocity;
             m_Animator.SetTrigger(animJumpHash);
             isJumping = true;
         }
