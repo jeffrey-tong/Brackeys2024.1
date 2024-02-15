@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerAbility m_Ability;
     [SerializeField] private CharacterData CharDataSO;
 
-    private Door currentActivatable;
+    private ITrigger currentTrigger;
 
     private void Awake()
     {
@@ -26,20 +26,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
             m_Locomotion.StopJump();
 
-        if (Input.GetKeyDown(KeyCode.W) && currentActivatable != null)
+        if (Input.GetKeyDown(KeyCode.W) && currentTrigger != null)
         {
-            currentActivatable.EnterDoor(this);
+            currentTrigger.Trigger(this);
         }
     }
-    public void SetDoor(Door door)
+    public void SetDoor(ITrigger newTrigger)
     {
-        this.currentActivatable = door;
+        this.currentTrigger = newTrigger;
     }
 
-    public void ClearDoor(Door door)
+    public bool ClearTrigger(ITrigger trigger)
     {
-        if (this.currentActivatable == door)
-            this.currentActivatable = null;
+        if (this.currentTrigger == trigger)
+        {
+            this.currentTrigger = null;
+            return true;
+        }
+
+        return false;
     }
 
     public CharacterData GetCharacterData() => CharDataSO;

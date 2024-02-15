@@ -37,12 +37,15 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float groundCheckDist = 0.5f;
     [SerializeField] private LayerMask groundMask;
+    private float timeSinceLastGrounded = 0f;
+    private bool isGrounded = false;
+    private RaycastHit2D groundHit;
+    private IVelocity currentGroundVel;
 
     private float currentSpeed = 0f;
     private float xInput = 0f;
 
-    private float timeSinceLastGrounded = 0f;
-    private bool isGrounded = false;
+
 
     private float timeSinceJumpPressed = 0f;
     private bool jumpRequest = false;
@@ -88,6 +91,11 @@ public class PlayerLocomotion : MonoBehaviour
         float translation = currentSpeed;
         desiredVelocity.x = translation;
 
+        if (groundHit && currentGroundVel != null)
+        {
+            desiredVelocity += currentGroundVel.Velocity;
+        }
+
         m_RigidBody.velocity = desiredVelocity;
     }
 
@@ -109,8 +117,8 @@ public class PlayerLocomotion : MonoBehaviour
         Vector2 start = m_RigidBody.position;
         Vector2 end = start + (Vector2.down * groundCheckDist);
 
-        RaycastHit2D hit = Physics2D.Linecast(start, end, groundMask);
-        bool wasGrounded = hit;
+        groundHit = Physics2D.Linecast(start, end, groundMask);
+        bool wasGrounded = groundHit;
 
         if (isGrounded && wasGrounded == false)
         {
@@ -123,6 +131,7 @@ public class PlayerLocomotion : MonoBehaviour
             isGrounded = true;
             isJumping = false;
             m_Animator.ResetTrigger(animJumpHash);
+            currentGroundVel = groundHit.transform.GetComponent<IVelocity>();
         }
     }
 

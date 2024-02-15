@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Door : MonoBehaviour, IInteractable
+public class Door : BaseTrigger
 {
     [Header("Components")]
     [SerializeField] private CharacterData CharDataSO;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
 
-    public static event Action<Door> OnAnyDoorEntered; // Event for when player enters the door
-    public static event Action<Door> OnAnyDoorHovered; // Event for when player is near the door 
-    public static event Action<Door> OnAnyDoorExit; // 
+
 
     public static Dictionary<CharacterColor, Color> DoorColorLookup = new Dictionary<CharacterColor, Color>()
     {
@@ -25,12 +23,7 @@ public class Door : MonoBehaviour, IInteractable
         UpdateDoorColor();
     }
 
-    public void Activate()
-    {
-        
-    }
-
-    public void EnterDoor(PlayerController controller)
+    public override void Trigger(PlayerController controller)
     {
         CharacterData dataSO = controller.GetCharacterData();
 
@@ -40,37 +33,6 @@ public class Door : MonoBehaviour, IInteractable
         Instantiate(CharDataSO.prefab, position, Quaternion.identity);
 
         SetCharacterData(dataSO);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            PlayerController playerController = collision.GetComponent<PlayerController>();
-            playerController.SetDoor(this);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            PlayerController playerController = collision.GetComponent<PlayerController>();
-            playerController.ClearDoor(this);
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-
-                PlayerController controller = collision.GetComponent<PlayerController>();
-
-            }
-        }
     }
 
     public void SetCharacterData(CharacterData newData)
