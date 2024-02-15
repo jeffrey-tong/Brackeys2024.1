@@ -4,35 +4,10 @@ using UnityEngine;
 
 public class Lever : BaseTrigger
 {
-    public override void Trigger()
+    public override void Trigger(PlayerController player)
     {
-        base.Trigger();
+        base.Trigger(player);
     }
 
     private bool canTrigger = false;
-    private void Update()
-    {
-        if (canTrigger)
-        {
-            if (Input.GetKeyDown(KeyCode.E)){
-                Trigger();
-            }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            canTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            canTrigger = false;
-        }
-    }
 }

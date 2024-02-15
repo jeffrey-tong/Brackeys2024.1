@@ -148,7 +148,14 @@ MonoBehaviour:
   canInteract: 1
   startTransform: {fileID: 174697167507118124}
   endTransform: {fileID: 801830434956166136}
-  translateSpeed: 5
+  duration: 0.5
+  translateCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _velocity: {x: 0, y: 0}
 --- !u!1 &9021375015166833328
 GameObject:
   m_ObjectHideFlags: 0

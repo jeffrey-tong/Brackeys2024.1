@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyDeath : BaseTrigger
 {
-    public override void Trigger()
+    public override void Trigger(PlayerController player = null)
     {
-        base.Trigger();
+        base.Trigger(player);
     }
 
     private void Update()
