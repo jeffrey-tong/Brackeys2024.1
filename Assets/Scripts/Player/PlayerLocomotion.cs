@@ -45,20 +45,21 @@ public class PlayerLocomotion : MonoBehaviour
     private float currentSpeed = 0f;
     private float xInput = 0f;
 
-
-
     private float timeSinceJumpPressed = 0f;
     private bool jumpRequest = false;
     private bool isJumping = false;
 
     private Vector2 desiredVelocity;
 
-
     // Anim hashes
     private static int animIsMovingHash;
     private static int animGroundHash;
     private static int animYVelHash;
     private static int animJumpHash;
+
+    // Events
+    public event Action OnPlayerLanded;
+
 
     private void Awake()
     {
@@ -81,7 +82,6 @@ public class PlayerLocomotion : MonoBehaviour
         UpdateSpeed();
         CheckGrounded();
         UpdateAnimation();
-
     }
 
     private void FixedUpdate()
@@ -132,6 +132,7 @@ public class PlayerLocomotion : MonoBehaviour
             isJumping = false;
             m_Animator.ResetTrigger(animJumpHash);
             currentGroundVel = groundHit.transform.GetComponent<IVelocity>();
+            OnPlayerLanded?.Invoke();
         }
     }
 
@@ -197,5 +198,27 @@ public class PlayerLocomotion : MonoBehaviour
     {
         jumpRequest = false;
     }
+
+    public Vector2 GetVelocity()
+    {
+        return desiredVelocity;
+    }
+
+    public void SetVelocity(Vector2 velocity)
+    {
+        this.desiredVelocity = velocity;
+    }
+
+    public void SetVelocityY(float yVelocity)
+    {
+        this.desiredVelocity.y = yVelocity;
+    }
+
+    public void SetVelocityX(float xVelocity)
+    {
+        this.desiredVelocity.x = xVelocity;
+    }
+
+    public bool IsPlayerGrounded() => isGrounded;
 }
 

@@ -26,6 +26,7 @@ public class InteractionPopup : MonoBehaviour
 
         transform.position = position;
 
+        StopAllCoroutines();
         StartCoroutine(HandleScale(true));
     }
 
@@ -59,6 +60,7 @@ public class InteractionPopup : MonoBehaviour
 
     private void TriggerExit_Callback(BaseTrigger trigger)
     {
+        StopAllCoroutines();
         StartCoroutine(HandleScale(false));
     }
 
