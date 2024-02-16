@@ -9,9 +9,10 @@ public class EnemyDeath : BaseTrigger
         base.Trigger(player);
     }
 
-    private void Update()
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        Debug.Log(collision);
+        if (collision.CompareTag("Projectile"))
         {
             OnDestroyed();
         }

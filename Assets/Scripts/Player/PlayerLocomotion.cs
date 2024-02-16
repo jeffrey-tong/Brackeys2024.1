@@ -44,6 +44,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private float currentSpeed = 0f;
     private float xInput = 0f;
+    private float playerFacing = 1f;
 
     private float timeSinceJumpPressed = 0f;
     private bool jumpRequest = false;
@@ -139,10 +140,16 @@ public class PlayerLocomotion : MonoBehaviour
     private void UpdateAnimation()
     {
         if (xInput > 0 && m_SpriteRenderer.flipX)
+        {
             m_SpriteRenderer.flipX = false;
+            playerFacing = 1f;
+        }
 
         if (xInput < 0 && m_SpriteRenderer.flipX == false)
+        {
             m_SpriteRenderer.flipX = true;
+            playerFacing = -1f;
+        }
 
         if (m_Animator != null)
         {
@@ -179,6 +186,11 @@ public class PlayerLocomotion : MonoBehaviour
     public float GetXInput()
     {
         return xInput;
+    }
+
+    public float GetPlayerFacing()
+    {
+        return playerFacing;
     }
 
     public void StartJump()
