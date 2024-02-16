@@ -9,7 +9,7 @@ public class Door : BaseTrigger
     [SerializeField] private CharacterData CharDataSO;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
 
-
+    public static event Action<CharacterData> OnAnyDoorEntered;
 
     public static Dictionary<CharacterColor, Color> DoorColorLookup = new Dictionary<CharacterColor, Color>()
     {
@@ -38,6 +38,7 @@ public class Door : BaseTrigger
         Destroy(controller.gameObject);
         Instantiate(CharDataSO.prefab, position, Quaternion.identity);
 
+        OnAnyDoorEntered?.Invoke(CharDataSO);
         SetCharacterData(dataSO);
     }
 
