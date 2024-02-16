@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net;
 using UnityEngine;
+
 
 public class RotationPlatform : BaseInteractable
 {
@@ -117,6 +119,35 @@ public class RotationPlatform : BaseInteractable
 
             yield return null;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Get the pivot point position
+        Vector3 pivotPoint = pivotTransform.position;
+
+        // Calculate the end points of the lines based on angles
+        Vector3 endPoint1 = GetEndPoint(pivotPoint, rotationAngleBase);
+        Vector3 endPoint2 = GetEndPoint(pivotPoint, rotationAngle);
+
+        Gizmos.color = UnityEngine.Color.red;
+        // Draw the lines
+        Gizmos.DrawLine(pivotPoint, endPoint1);
+
+        Gizmos.color = UnityEngine.Color.green;
+        Gizmos.DrawLine(pivotPoint, endPoint2);
+
+    }
+
+    private Vector3 GetEndPoint(Vector3 pivot, float angle)
+    {
+        // Calculate the end point based on angle and distance (you can adjust the distance as needed)
+        float distance = 5f;
+        float radians = Mathf.Deg2Rad * angle;
+        float x = pivot.x + distance * Mathf.Cos(radians);
+        float y = pivot.y + distance * Mathf.Sin(radians);
+
+        return new Vector3(x, y, pivot.z);
     }
 }
 

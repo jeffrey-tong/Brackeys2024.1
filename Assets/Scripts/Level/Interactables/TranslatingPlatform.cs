@@ -30,13 +30,6 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
         transform.position = isMovingToEnd ? startPoint : endPoint;
     }
 
-    private void Start()
-    {
-
-
-
-    }
-
     public override void Activate()
     {
         base.Activate();
@@ -75,6 +68,21 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
 
         _velocity = Vector2.zero;
         canInteract = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Store the current matrix
+        Matrix4x4 originalMatrix = Gizmos.matrix;
+
+        // Apply the object's rotation to the Gizmos.matrix
+        Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
+
+        // Draw the rotated wire cube
+        Gizmos.DrawWireCube(endTransform.position - transform.position, new Vector3(transform.localScale.x, transform.localScale.y, 0));
+
+        // Restore the original matrix
+        Gizmos.matrix = originalMatrix;
     }
 }
 
