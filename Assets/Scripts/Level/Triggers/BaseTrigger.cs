@@ -39,7 +39,7 @@ public class BaseTrigger : MonoBehaviour, ITrigger
             PlayerController playerController = collision.GetComponent<PlayerController>();
 
             if (playerController.ClearTrigger(this))
-                OnExit.Invoke(this);
+                OnExit?.Invoke(this);
         }
     }
 }
