@@ -23,7 +23,7 @@ public class Magnet : BaseInteractable
     [SerializeField] private float magnetRadius;
 
     private Collider2D magnetCollider;
-
+    [SerializeField] LayerMask pushableLayerMask;
     [SerializeField] private bool isMagnetOn = false;
 
     // Start is called before the first frame update
@@ -47,6 +47,35 @@ public class Magnet : BaseInteractable
         {
             sr.color = Color.red;
             pointEffector.enabled = false;
+        }
+        //Sets if metal boxes can be moved or not
+        //Check for radial mode
+        if (magnetCircleForceCollider.enabled)
+        {
+            Collider2D[] circleColliders = Physics2D.OverlapCircleAll(transform.position, magnetRadius, pushableLayerMask);
+            foreach (Collider2D collider in circleColliders)
+            {
+                MoveableObject pushObject = collider.GetComponent<MoveableObject>();
+                if (pushObject != null)
+                {
+                    pushObject.SetPushable(isMagnetOn, Vector2.zero);
+                }
+            }
+        }
+        if (magnetBoxForceCollider.enabled)
+        {
+            // Get all colliders within the box collider with offset
+            Collider2D[] boxColliders = Physics2D.OverlapBoxAll((Vector2)transform.position + magnetBoxForceCollider.offset, new Vector2(magnetLength, magnetWidth), 0f, pushableLayerMask);
+
+            // Process the results for the box collider
+            foreach (Collider2D collider in boxColliders)
+            {
+                MoveableObject pushObject = collider.GetComponent<MoveableObject>();
+                if (pushObject != null)
+                {
+                    pushObject.SetPushable(isMagnetOn, Vector2.zero);
+                }
+            }
         }
     }
     private void SetupMagnet()

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711949785720699949}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.00000008742278, w: -1}
   m_LocalPosition: {x: 6.87, y: 10.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -146,7 +146,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 128
-  m_ForceMagnitude: -100
+  m_ForceMagnitude: -500
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -161,7 +161,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711949785720699949}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -206,7 +206,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711949785720699949}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -250,10 +250,13 @@ MonoBehaviour:
   magnetBoxForceCollider: {fileID: 6873481296753595869}
   magnetCircleForceCollider: {fileID: 2484121951117726152}
   magnetMode: 0
-  magnetDirection: 0
-  magnetForce: 100
+  magnetDirection: 4
+  magnetForce: 500
   magnetBoxForceColliderOffset: {x: 6.29, y: 0}
   magnetLength: 10
   magnetWidth: 2
   magnetRadius: 6.15
+  pushableLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   isMagnetOn: 0

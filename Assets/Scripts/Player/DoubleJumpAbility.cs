@@ -37,16 +37,3 @@ public class DoubleJumpAbility : PlayerAbility
         canDoubleJump = false;
     }
 }
-
-public class MoveBoxAbility : PlayerAbility
-{
-    public override bool CanPerformAbility()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void PerformAbility()
-    {
-        throw new NotImplementedException();
-    }
-}

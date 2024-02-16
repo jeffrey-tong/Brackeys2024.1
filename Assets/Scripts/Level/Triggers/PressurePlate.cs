@@ -19,10 +19,7 @@ public class PressurePlate : BaseTrigger
 
         if (collision.CompareTag("Triggerable"))
         {
-            if (!collision.isTrigger)
-            {
-                Trigger(null);
-            }   
+            Trigger(null);
         }
     }
 
