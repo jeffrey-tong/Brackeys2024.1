@@ -176,6 +176,11 @@ public class PlayerLocomotion : MonoBehaviour
         this.xInput = newInput;
     }
 
+    public float GetXInput()
+    {
+        return xInput;
+    }
+
     public void StartJump()
     {
         jumpRequest = true;
