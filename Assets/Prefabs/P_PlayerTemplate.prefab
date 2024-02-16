@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2168009972690555674}
   - component: {fileID: 8346742438854251670}
   - component: {fileID: 6855527055592640565}
+  - component: {fileID: 1974848621471377786}
   - component: {fileID: 3429224486593580416}
   - component: {fileID: 3519094436294559721}
   m_Layer: 0
@@ -81,6 +82,20 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1974848621471377786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211474478503242870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2e7b81f214cd14e93b7889e646e6be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityCode: 32
+  jumpVelocity: 10
 --- !u!50 &3429224486593580416
 Rigidbody2D:
   serializedVersion: 4

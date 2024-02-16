@@ -25,6 +25,12 @@ public class Door : BaseTrigger
 
     public override void Trigger(PlayerController controller)
     {
+        Action FadeIn = () => SwapCharacter(controller);
+        TransitionManager.Instance.DoFadeInOut(FadeIn, null);
+    }
+
+    private void SwapCharacter(PlayerController controller)
+    {
         CharacterData dataSO = controller.GetCharacterData();
 
         Vector2 position = controller.transform.position;

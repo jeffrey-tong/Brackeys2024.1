@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour
         {
             currentTrigger.Trigger(this);
         }
+
+        if (m_Ability != null && Input.GetKeyDown(m_Ability.GetAbilityKey()) && m_Ability.CanPerformAbility())
+        {
+            m_Ability.PerformAbility();
+        }
     }
     public void SetDoor(ITrigger newTrigger)
     {
