@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2822873958506666857
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_Name
+      value: P_PlayerTemplate Variant Fireball
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3394659182347816988, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: b270f17c0e37b1040b4a8f051e76951f, type: 2}
+    - target: {fileID: 8346742438854251670, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      propertyPath: CharDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a9da12248a979f4596c3d411fa021c1, type: 2}
+    m_RemovedComponents:
+    - {fileID: 1974848621471377786, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: -5827677352381397808}
+  m_SourcePrefab: {fileID: 100100000, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+--- !u!4 &916277096471109256 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3142274226015241697, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+  m_PrefabInstance: {fileID: 2822873958506666857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4034338467849615135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+  m_PrefabInstance: {fileID: 2822873958506666857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5827677352381397808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034338467849615135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99244f19219d34343b2828cf66dd5db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityCode: 9
+  fireballPrefab: {fileID: 8882688878035410043, guid: 313506737c84f884fbd22e158fe4985d, type: 3}
+  firePoint: {fileID: 916277096471109256}
