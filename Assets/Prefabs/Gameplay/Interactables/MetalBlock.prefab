@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6619664085584230878}
   m_Layer: 7
   m_Name: MetalBlock
-  m_TagString: Untagged
+  m_TagString: Triggerable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0941963, y: 1.0649343}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &3799830410333363511
 Rigidbody2D:
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -223,5 +223,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1.04}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0

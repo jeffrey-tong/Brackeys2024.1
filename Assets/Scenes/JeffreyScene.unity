@@ -1622,61 +1622,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetForce
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetWidth
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetLength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetRadius
-      value: 6.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 588053365907924814, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: magnetDirection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1711949785720699949, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
       propertyPath: m_Name
       value: Magnet
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484121951117726152, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Radius
-      value: 6.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484121951117726152, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904380563147560386, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904380563147560386, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_ForceMagnitude
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6873481296753595869, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Size.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6873481296753595869, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6873481296753595869, guid: 50b82e75d9e35744c995b6a4d92995fe, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1782,11 +1730,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4762052423729361417, guid: 9ab8279c32408c344874a7e56ecc7d9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.29
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 4762052423729361417, guid: 9ab8279c32408c344874a7e56ecc7d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.09
+      value: 4.81
       objectReference: {fileID: 0}
     - target: {fileID: 4762052423729361417, guid: 9ab8279c32408c344874a7e56ecc7d9e, type: 3}
       propertyPath: m_LocalPosition.z
