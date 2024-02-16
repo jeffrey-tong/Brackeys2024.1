@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     [SerializeField] private float fadeInDuration = 0.2f;
-    private CharacterData current;
+    [SerializeField] private CharacterData current;
 
     [SerializeField] private CharacterMusic[] characterMusics;
     private Dictionary<CharacterData, AudioSource> MusicLookup;
@@ -26,29 +26,53 @@ public class MusicManager : MonoBehaviour
         }
 
         Door.OnAnyDoorEntered += Door_EnteredCallback;
+
+        if (current != null && MusicLookup.TryGetValue(current, out AudioSource startSouce))
+        {
+            StartCoroutine(FadeIn(startSouce));
+        }
     }
 
     private void Door_EnteredCallback(CharacterData obj)
     {
-        if (current != null && MusicLookup.TryGetValue(current, out AudioSource fadeOut))
+        if (current != null && MusicLookup.TryGetValue(current, out AudioSource fadeOutSource))
         {
-            StartCoroutine(FadeInOut(fadeOut, false));
+            StartCoroutine(FadeOut(fadeOutSource));
         }
 
         current = obj;
 
         if (MusicLookup.TryGetValue(obj, out AudioSource fadeInSource))
         {
-            StartCoroutine(FadeInOut(fadeInSource, true));
+            StartCoroutine(FadeIn(fadeInSource));
         }  
     }
 
-    private IEnumerator FadeInOut(AudioSource source, bool fadeIn)
+    private IEnumerator FadeIn(AudioSource source)
     {
-        float start = fadeIn ? 0 : 1;
-        float end = fadeIn ? 1 : 0;
-
+        float start = 0;
+        float end = 1;
         float timeElapsed = 0.0f;
+
+        source.volume = start;
+
+        while (timeElapsed <= fadeInDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            float t = timeElapsed / fadeInDuration;
+            source.volume = Mathf.Lerp(start, end, t);
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator FadeOut(AudioSource source)
+    {
+        float start = 1;
+        float end = 0;
+        float timeElapsed = 0;
+
+        source.volume = start;
 
         while (timeElapsed <= fadeInDuration)
         {

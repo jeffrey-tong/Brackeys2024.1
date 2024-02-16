@@ -462,7 +462,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4892679820907136866, guid: 6e28f327f5a7420408da9e459609ac54, type: 2}
   m_audioClip: {fileID: 8300000, guid: 6ef1d1625f3be4e42b177bf2d570e7ab, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInDuration: 0.2
+  current: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
   characterMusics:
   - characterDataSO: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
     musicToPlay: {fileID: 7061153661550072365}
