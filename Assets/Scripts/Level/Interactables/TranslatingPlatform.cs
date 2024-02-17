@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TranslatingPlatform : BaseInteractable, IVelocity
@@ -7,6 +8,8 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
     [Header("Components")]
     [SerializeField] private Transform startTransform;
     [SerializeField] private Transform endTransform;
+
+    [SerializeField] private PlayMode mode = PlayMode.Single;
 
     [Header("Properties")]
     [SerializeField] private float playerSpeed = 2.0f;
@@ -28,6 +31,14 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
         endPoint = new Vector2(endTransform.position.x, endTransform.position.y);
 
         transform.position = isMovingToEnd ? startPoint : endPoint;
+    }
+
+    private void Start()
+    {
+        if(mode == PlayMode.Single)
+        {
+            StartCoroutine(TranslateToPosition());
+        }
     }
 
     public override void Activate()
@@ -68,6 +79,12 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
 
         _velocity = Vector2.zero;
         canInteract = true;
+
+        if(mode == PlayMode.Single)
+        {
+            isMovingToEnd = !isMovingToEnd;
+            StartCoroutine(TranslateToPosition());
+        }
     }
 
     private void OnDrawGizmos()
