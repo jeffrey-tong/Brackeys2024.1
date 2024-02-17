@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImg: {fileID: 1725949144974233744}
   fadeDuration: 0.3
+  pauseDuration: 0.1
   fadeCurve:
     serializedVersion: 2
     m_Curve:

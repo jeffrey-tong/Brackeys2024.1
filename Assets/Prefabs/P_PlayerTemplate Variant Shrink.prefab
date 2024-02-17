@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
       propertyPath: m_Name
-      value: P_PlayerTemplate Variant
+      value: P_PlayerTemplate Variant Shrink
       objectReference: {fileID: 0}
     - target: {fileID: 2168009972690555674, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60,8 +60,31 @@ PrefabInstance:
       propertyPath: CharDataSO
       value: 
       objectReference: {fileID: 11400000, guid: fc7d8baa3840a9a48bf25329ae6c9ef4, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1974848621471377786, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6221591737973253072}
   m_SourcePrefab: {fileID: 100100000, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+--- !u!1 &6158444835553745726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1211474478503242870, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
+  m_PrefabInstance: {fileID: 5019039049338730312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6221591737973253072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6158444835553745726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261053f4823ffb54f9f8023405c34a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityCode: 9
+  shrinkFactor: 0.5
