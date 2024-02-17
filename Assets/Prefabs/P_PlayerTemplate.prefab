@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityCode: 32
-  jumpVelocity: 10
+  jumpVelocity: 20
 --- !u!50 &3429224486593580416
 Rigidbody2D:
   serializedVersion: 4
