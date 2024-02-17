@@ -83,6 +83,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  moveableMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &1974848621471377786
 MonoBehaviour:
   m_ObjectHideFlags: 0
