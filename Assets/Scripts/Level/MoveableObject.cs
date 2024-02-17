@@ -19,7 +19,7 @@ public class MoveableObject : MonoBehaviour
         isPushable = pushable;
         if (isPushable)
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
