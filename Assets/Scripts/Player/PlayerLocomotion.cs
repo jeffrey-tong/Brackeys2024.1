@@ -37,6 +37,8 @@ public class PlayerLocomotion : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private float groundCheckDist = 0.5f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask moveableMask;
+    private LayerMask canJumpMask;
     private float timeSinceLastGrounded = 0f;
     private bool isGrounded = false;
     private RaycastHit2D groundHit;
@@ -76,6 +78,9 @@ public class PlayerLocomotion : MonoBehaviour
         // Using kinematics to calculate values
         jumpInitialVelocity = (2 * jumpHeight) / jumpDuration;
         jumpGravity = (-2 * jumpHeight) / (Mathf.Pow(jumpDuration, 2));
+
+        //Add layers to check for jump
+        canJumpMask = groundMask | moveableMask;
     }
 
     private void Update()
@@ -118,7 +123,7 @@ public class PlayerLocomotion : MonoBehaviour
         Vector2 start = m_RigidBody.position;
         Vector2 end = start + (Vector2.down * groundCheckDist);
 
-        groundHit = Physics2D.Linecast(start, end, groundMask);
+        groundHit = Physics2D.Linecast(start, end, canJumpMask);
         bool wasGrounded = groundHit;
 
         if (isGrounded && wasGrounded == false)
