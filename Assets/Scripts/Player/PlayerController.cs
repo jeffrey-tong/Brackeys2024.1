@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,10 +10,25 @@ public class PlayerController : MonoBehaviour
 
     private ITrigger currentTrigger;
 
+    private static PlayerController _current;
+    public static PlayerController Current
+    {
+        get { return _current; }
+        private set
+        {
+            _current = value;
+            OnPlayerChanged?.Invoke();
+        }
+    }
+
+    public static event Action OnPlayerChanged;
+
     private void Awake()
     {
         if (m_Locomotion == null) m_Locomotion = GetComponent<PlayerLocomotion>();
         if (m_Ability == null) m_Ability = GetComponent<PlayerAbility>();
+
+        Current = this;
     }
 
     private void Update()
@@ -53,4 +69,5 @@ public class PlayerController : MonoBehaviour
     }
 
     public CharacterData GetCharacterData() => CharDataSO;
+    public PlayerLocomotion GetLocomotion() => m_Locomotion;
 }
