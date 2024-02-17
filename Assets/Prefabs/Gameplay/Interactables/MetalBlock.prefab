@@ -171,4 +171,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d084b0395f6022941896f5688c661a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPushable: 0
