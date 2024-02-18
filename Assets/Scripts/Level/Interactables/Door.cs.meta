@@ -3,7 +3,10 @@ guid: 1369099ea6ed1a1488e1a979b6d58cf2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CharDataSO: {instanceID: 0}
+  - m_SpriteRenderer: {instanceID: 0}
+  - doorEnteredClip: {fileID: 8300000, guid: 7b7fffaaa6ac77c429ce2922c95a6d4d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

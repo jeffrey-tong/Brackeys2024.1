@@ -88,3 +88,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityCode: 9
   shrinkFactor: 0.5
+  shrinkFX: {fileID: 8300000, guid: aab1506cbe62ae34bacac048b8a3bf9f, type: 3}
+  shrinkVFX: {fileID: 6174402259485981899, guid: 3cd4149bd9c05874d82a1f9fcae2bd78, type: 3}

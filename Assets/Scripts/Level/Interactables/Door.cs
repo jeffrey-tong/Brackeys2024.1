@@ -8,7 +8,7 @@ public class Door : BaseTrigger
     [Header("Components")]
     [SerializeField] private CharacterData CharDataSO;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
-
+    [SerializeField] private AudioClip doorEnteredClip;
     public static event Action<CharacterData> OnAnyDoorEntered;
 
     private void Start()
@@ -20,6 +20,7 @@ public class Door : BaseTrigger
     {
         Action FadeIn = () => SwapCharacter(controller);
         TransitionManager.Instance.DoFadeInOut(FadeIn, null);
+        if (doorEnteredClip != null) { AudioManager.Instance.PlayAudioSFX(doorEnteredClip); }
     }
 
     private void SwapCharacter(PlayerController controller)

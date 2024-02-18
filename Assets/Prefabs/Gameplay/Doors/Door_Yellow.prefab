@@ -102,6 +102,7 @@ MonoBehaviour:
   interactablesList: []
   CharDataSO: {fileID: 11400000, guid: 8a9da12248a979f4596c3d411fa021c1, type: 2}
   m_SpriteRenderer: {fileID: 3019755778530271576}
+  doorEnteredClip: {fileID: 8300000, guid: ee3cc074627cd0546bdade4d36d58d42, type: 3}
 --- !u!61 &9142538861452221442
 BoxCollider2D:
   m_ObjectHideFlags: 0

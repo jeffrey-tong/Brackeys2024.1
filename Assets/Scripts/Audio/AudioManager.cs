@@ -41,6 +41,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudioSFX(AudioClip clip)
     {
+        if (clip == null) return;
+
         AudioSource source = GetTwoDimensionalSource();
         source.clip = clip;
         source.Play();

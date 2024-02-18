@@ -10,6 +10,9 @@ public class ShrinkingAbility : PlayerAbility
     private Vector3 defaultScale = Vector3.one;
     [SerializeField] private float shrinkFactor = 0.5f;
 
+    [SerializeField] private AudioClip shrinkFX;
+    [SerializeField] private ParticleSystem shrinkVFX;
+
     private void Start()
     {
         m_Locomotion = GetComponent<PlayerLocomotion>();
@@ -31,6 +34,9 @@ public class ShrinkingAbility : PlayerAbility
         {
             ExpandCharacter();
         }
+
+        AudioManager.Instance.PlayAudioSFX(shrinkFX);
+        Instantiate(shrinkVFX, transform.position, Quaternion.identity);
     }
 
     private void ShrinkCharacter()
