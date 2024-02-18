@@ -15,6 +15,11 @@ public class RotationPlatform : BaseInteractable
     [SerializeField] private float rotationAngle;
     [SerializeField] private float rotationSpeed;
 
+    private SpriteRenderer sr;
+    private BoxCollider2D boxCollider;
+    [SerializeField] private float platformLength;
+    [SerializeField] private float platformWidth;
+
     private Vector2 pivotPoint;
     private bool isPingPongToEnd = false;
 
@@ -28,6 +33,12 @@ public class RotationPlatform : BaseInteractable
         Vector3 pivotOffset = transform.position - (Vector3)pivotPoint;
         transform.position = (Vector3)pivotPoint + Quaternion.Euler(0f, 0f, rotationAngleBase) * pivotOffset;
         transform.rotation = Quaternion.Euler(0f, 0f, rotationAngleBase);
+
+        sr = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+
+        sr.size = new Vector2(platformLength, platformWidth);
+        boxCollider.size = new Vector2(platformLength, platformWidth);
     }
 
     public override void Activate()
@@ -137,6 +148,14 @@ public class RotationPlatform : BaseInteractable
         Gizmos.color = UnityEngine.Color.green;
         Gizmos.DrawLine(pivotPoint, endPoint2);
 
+    }
+
+    private void OnValidate()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        sr.size = new Vector2(platformLength, platformWidth);
+        boxCollider.size = new Vector2(platformLength, platformWidth);
     }
 
     private Vector3 GetEndPoint(Vector3 pivot, float angle)
