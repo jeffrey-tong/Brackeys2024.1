@@ -180,9 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Locomotion: {fileID: 6855527055592640565}
   followVFX: {fileID: 0}
-  landedVFX: {fileID: 0}
-  landedSFX: {fileID: 0}
-  jumpedSFX: {fileID: 0}
+  landedVFX: {fileID: 6174402259485981899, guid: 7622f76812891234a8f2fa1b623b320a, type: 3}
+  landedSFX: {fileID: 8300000, guid: fb323ce52d514644d945e96bee454341, type: 3}
+  jumpedSFX: {fileID: 8300000, guid: 42e883bd72463f64e8afc153320554c2, type: 3}
 --- !u!1 &4145814867489040724
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 981507532, guid: 48b266473af34d841b271821d72d65fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
