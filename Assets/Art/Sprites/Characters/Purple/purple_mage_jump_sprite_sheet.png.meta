@@ -1,0 +1,681 @@
+fileFormatVersion: 2
+guid: aead445a26b31b14eaf24861e24ec7b9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 53
+        width: 213
+        height: 269
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b8ae98a26c71c46b1ede7596c7f6a4
+      internalID: 1987291520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 53
+        width: 218
+        height: 255
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06a5894ca4b7c64bb4fb12fa78d400d
+      internalID: 1031740463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 53
+        width: 222
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6b6df2dc09d5744a671fd424bd50e8
+      internalID: 2079188196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 53
+        width: 229
+        height: 237
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42610a65b09ffb4099dace4465837ba
+      internalID: -1844443160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 53
+        width: 231
+        height: 241
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6515ff5c500de42a08cb752938e989
+      internalID: 1970582676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 53
+        width: 236
+        height: 255
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3035549cbb14949a44393ee70c4936
+      internalID: 810484831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 53
+        width: 245
+        height: 264
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ecf4e4836c9f24fa77778bc86fa4f0
+      internalID: -1464287329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 53
+        width: 245
+        height: 269
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc37bbffa9e020c41a06697ae6a5475a
+      internalID: 175321357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3217
+        y: 53
+        width: 241
+        height: 278
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7187ae9c7218d394dbdd73be8e07fe00
+      internalID: 1474422597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 49
+        width: 222
+        height: 291
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2040c1b57c138e4468eaf292cbe332da
+      internalID: -1933189873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 48
+        width: 216
+        height: 297
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f361676fb6ef9094384488f2f86baf28
+      internalID: -1846253776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 4381
+        y: 48
+        width: 218
+        height: 301
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3371994ab8f125d48b33f45297785690
+      internalID: -644011971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 48
+        width: 214
+        height: 297
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2cc3068f69e66428a29d026ba36b4e
+      internalID: -1061410730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 5161
+        y: 48
+        width: 211
+        height: 292
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5101ee1c7e60744a5853d789b94b05
+      internalID: -1419924067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 5550
+        y: 48
+        width: 209
+        height: 287
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c8ea5f1c0bbaa40bf2619149fddeb0
+      internalID: -1979650462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 5941
+        y: 48
+        width: 213
+        height: 278
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d1bfd4348c42b468fcda4b21199cf5
+      internalID: 242262042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 6336
+        y: 48
+        width: 218
+        height: 274
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9d187dfaa8ec845aed1c6d306ab17f
+      internalID: -1217702075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 6714
+        y: 53
+        width: 240
+        height: 264
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50311329834d508459ce89ef6ddd82c6
+      internalID: 1321461030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 7077
+        y: 53
+        width: 273
+        height: 260
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37916f2c478710541b8ba8c92041e8c1
+      internalID: 1587011196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 7464
+        y: 53
+        width: 272
+        height: 254
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37dfbeaf6669f74f828f33861ab6c4e
+      internalID: -1013072059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 7850
+        y: 53
+        width: 255
+        height: 255
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e101c4737295df4439f36f58d2f5c655
+      internalID: 1688039435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 8241
+        y: 53
+        width: 225
+        height: 262
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa89e1ec1dfaa07459104eb0b71f7fb8
+      internalID: 1978311329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 8628
+        y: 53
+        width: 209
+        height: 269
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bcf5d81ecd4684aa91d306cf3b1c8a
+      internalID: -1664346711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_mage_jump_sprite_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 9019
+        y: 53
+        width: 209
+        height: 273
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06eb201f2fe3f84ab04d5ee95a26f74
+      internalID: -1688763817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      purple_mage_jump_sprite_sheet_0: 1987291520
+      purple_mage_jump_sprite_sheet_1: 1031740463
+      purple_mage_jump_sprite_sheet_10: -1846253776
+      purple_mage_jump_sprite_sheet_11: -644011971
+      purple_mage_jump_sprite_sheet_12: -1061410730
+      purple_mage_jump_sprite_sheet_13: -1419924067
+      purple_mage_jump_sprite_sheet_14: -1979650462
+      purple_mage_jump_sprite_sheet_15: 242262042
+      purple_mage_jump_sprite_sheet_16: -1217702075
+      purple_mage_jump_sprite_sheet_17: 1321461030
+      purple_mage_jump_sprite_sheet_18: 1587011196
+      purple_mage_jump_sprite_sheet_19: -1013072059
+      purple_mage_jump_sprite_sheet_2: 2079188196
+      purple_mage_jump_sprite_sheet_20: 1688039435
+      purple_mage_jump_sprite_sheet_21: 1978311329
+      purple_mage_jump_sprite_sheet_22: -1664346711
+      purple_mage_jump_sprite_sheet_23: -1688763817
+      purple_mage_jump_sprite_sheet_3: -1844443160
+      purple_mage_jump_sprite_sheet_4: 1970582676
+      purple_mage_jump_sprite_sheet_5: 810484831
+      purple_mage_jump_sprite_sheet_6: -1464287329
+      purple_mage_jump_sprite_sheet_7: 175321357
+      purple_mage_jump_sprite_sheet_8: 1474422597
+      purple_mage_jump_sprite_sheet_9: -1933189873
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
