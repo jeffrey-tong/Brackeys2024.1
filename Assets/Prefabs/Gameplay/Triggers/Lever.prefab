@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2041138593, guid: 450ab3f9f9bb580499c401af64750dd0, type: 3}
+  m_Sprite: {fileID: 1244802830, guid: d3b72da499cd4b24cb100327e1a0e6e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactablesList: []
+  sprite1: {fileID: 1244802830, guid: d3b72da499cd4b24cb100327e1a0e6e6, type: 3}
+  sprite2: {fileID: 1313927077, guid: d3b72da499cd4b24cb100327e1a0e6e6, type: 3}
