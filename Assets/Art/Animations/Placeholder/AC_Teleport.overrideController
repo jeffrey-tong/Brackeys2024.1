@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AC_Teleport
+  m_Controller: {fileID: 9100000, guid: 926dda93ff01cca49b14f3d8ce28e2ad, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 0f5ad7eab50513541a45e4a168f04e18, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 34968d41af290564daece245a9654813, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1701251275577b540a023314dc0c3371, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b2f8162bc360ef640ac901c67cf21eff, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 28b72940427308a4198aba917fdb1ba4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 230b5822a7a48d94592e7b8bc347ad0c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e30d7fcabc1a6474595ab90668c84a7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 25293eac671875248b1299ccd388f316, type: 2}

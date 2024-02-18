@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactablesList: []
-  destructionSound: {fileID: 8300000, guid: ad4356d45a16eae4fa9783af770f5d00, type: 3}
+  destructionSound: {fileID: 8300000, guid: ee3cc074627cd0546bdade4d36d58d42, type: 3}
 --- !u!58 &2410897531600259461
 CircleCollider2D:
   m_ObjectHideFlags: 0
