@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class VisibilityPlatform : BaseInteractable
 {
+    [SerializeField] private bool isVisible = true;
+
+    private void Start()
+    {
+        gameObject.SetActive(isVisible);
+    }
+
     public override void Activate()
     {
         base.Activate();
-        gameObject.SetActive(!gameObject.activeSelf);
+        isVisible = !isVisible;
+        gameObject.SetActive(isVisible);
     }
 }
