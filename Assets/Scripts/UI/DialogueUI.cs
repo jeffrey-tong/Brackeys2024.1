@@ -40,15 +40,6 @@ public class DialogueUI : MonoBehaviour
 
     private void Update()
     {
-        if (isDialoguePlaying && Input.GetKeyDown(KeyCode.Space))
-        {
-            requestSkip = true;
-        }
-        if (isDialoguePlaying && Input.GetKeyUp(KeyCode.Space))
-        {
-            requestSkip = false;
-        }
-
         if (m_Locomotion)
         {
             if(m_Locomotion.GetPlayerFacing() < 0f)
