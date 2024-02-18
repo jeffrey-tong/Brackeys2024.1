@@ -11,13 +11,6 @@ public class Door : BaseTrigger
 
     public static event Action<CharacterData> OnAnyDoorEntered;
 
-    public static Dictionary<CharacterColor, Color> DoorColorLookup = new Dictionary<CharacterColor, Color>()
-    {
-        {CharacterColor.GRAY, Color.gray },
-        {CharacterColor.BLUE, Color.blue },
-        {CharacterColor.RED, Color.red }
-    };
-
     private void Start()
     {
         UpdateDoorColor();
@@ -50,9 +43,6 @@ public class Door : BaseTrigger
 
     private void UpdateDoorColor()
     {
-        if (CharDataSO != null && DoorColorLookup.ContainsKey(CharDataSO.color))
-        {
-            m_SpriteRenderer.color = DoorColorLookup[CharDataSO.color];
-        }
+        m_SpriteRenderer.color = CharDataSO.color;
     }
 }

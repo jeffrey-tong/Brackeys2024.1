@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SO_YellowChar
   m_EditorClassIdentifier: 
   prefab: {fileID: 4034338467849615135, guid: 429817c28896ba249bb767353353fadb, type: 3}
-  color: 2
+  color: {r: 1, g: 1, b: 0, a: 1}
