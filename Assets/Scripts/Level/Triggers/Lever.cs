@@ -17,7 +17,7 @@ public class Lever : BaseTrigger
     {
         base.Trigger(player);
         isLeverOn = !isLeverOn;
-        sr.sprite = isLeverOn ? sprite1 : sprite2;
+        sr.sprite = isLeverOn ? sprite2 : sprite1;
     }
 
     private bool canTrigger = false;
