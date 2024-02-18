@@ -31,7 +31,6 @@ public class PlayerCameraManager : MonoBehaviour
 
         float diffX = Mathf.Abs(desiredX - currentX);
         bool updateX = diffX >= deadZone.x;
-        Debug.Log($"Current diff is: {diffX}");
         if (updateX)
         {
             target.x = desiredX;

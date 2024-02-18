@@ -96,3 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityCode: 9
   recallObject: {fileID: 8583375707121504469, guid: dab0c7046a83d424eb8d82fb74f7630f, type: 3}
+  SpawnSFX: {fileID: 8300000, guid: 3d1af420283559144b5cd257ccd9e745, type: 3}
+  teleportSFX: {fileID: 8300000, guid: 7b7fffaaa6ac77c429ce2922c95a6d4d, type: 3}

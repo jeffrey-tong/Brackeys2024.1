@@ -9,6 +9,9 @@ public class Lever : BaseTrigger
     [SerializeField] private Sprite sprite2;
     private bool isLeverOn = false;
 
+    [SerializeField] private AudioClip onClip;
+    [SerializeField] private AudioClip offClip;
+
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -17,7 +20,9 @@ public class Lever : BaseTrigger
     {
         base.Trigger(player);
         isLeverOn = !isLeverOn;
+        AudioManager.Instance.PlayAudioSFX(isLeverOn? onClip : offClip);
         sr.sprite = isLeverOn ? sprite2 : sprite1;
+
     }
 
     private bool canTrigger = false;

@@ -8,6 +8,8 @@ public class DoubleJumpAbility : PlayerAbility
 
     [SerializeField] private float jumpVelocity = 5f;
 
+    [SerializeField] private AudioClip jumpSound;
+
     private void Awake()
     {
         m_Locomotion = GetComponent<PlayerLocomotion>();
@@ -35,5 +37,6 @@ public class DoubleJumpAbility : PlayerAbility
     {
         m_Locomotion.SetVelocityY(jumpVelocity);
         canDoubleJump = false;
+        AudioManager.Instance.PlayAudioSFX(jumpSound);
     }
 }
