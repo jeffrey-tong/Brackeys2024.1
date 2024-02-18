@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9210523186309269018}
   - component: {fileID: 3019755778530271576}
-  - component: {fileID: 8851231007416577186}
   - component: {fileID: 9142538861452221442}
   m_Layer: 0
-  m_Name: Door_Yellow
+  m_Name: Door_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +31,7 @@ Transform:
   m_LocalScale: {x: 3.5089023, y: 3.596412, z: 4.4876614}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9186230818915936933}
+  - {fileID: 2919285822987328843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3019755778530271576
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 490defda9d13b3448ba7445b4290254e, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,21 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8851231007416577186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926725039847285727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1369099ea6ed1a1488e1a979b6d58cf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactablesList: []
-  CharDataSO: {fileID: 11400000, guid: 8a9da12248a979f4596c3d411fa021c1, type: 2}
-  m_SpriteRenderer: {fileID: 3019755778530271576}
 --- !u!61 &9142538861452221442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2455053, y: 1.279829}
   m_EdgeRadius: 0
---- !u!1001 &2669365708092159166
+--- !u!1001 &8283266816893354832
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -161,15 +145,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896334788300742189, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 0.12941177
       objectReference: {fileID: 0}
     - target: {fileID: 5896334788300742189, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9960785
+      value: 0.12941177
       objectReference: {fileID: 0}
     - target: {fileID: 5896334788300742189, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9960785
+      value: 0.12941177
       objectReference: {fileID: 0}
     - target: {fileID: 6518804010601537051, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: m_LocalScale.x
@@ -228,8 +212,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
---- !u!4 &9186230818915936933 stripped
+--- !u!4 &2919285822987328843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6518804010601537051, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
-  m_PrefabInstance: {fileID: 2669365708092159166}
+  m_PrefabInstance: {fileID: 8283266816893354832}
   m_PrefabAsset: {fileID: 0}
