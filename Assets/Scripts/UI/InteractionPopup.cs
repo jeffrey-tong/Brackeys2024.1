@@ -12,7 +12,7 @@ public class InteractionPopup : MonoBehaviour
     [SerializeField] private float yOffset = 2f;
     [SerializeField] private float scaleDuration = 0.3f;
     [SerializeField] private AnimationCurve scaleCurve;
-
+    [SerializeField] private AudioClip popupSFX;
     private void Start()
     {
         BaseTrigger.OnEntered += TriggerEntered_Callback;
@@ -28,6 +28,8 @@ public class InteractionPopup : MonoBehaviour
 
         StopAllCoroutines();
         StartCoroutine(HandleScale(true));
+
+        if (popupSFX != null ) { AudioManager.Instance.PlayAudioSFX(popupSFX); }
     }
 
     private IEnumerator HandleScale(bool enter)

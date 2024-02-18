@@ -227,6 +227,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  popupSFX: {fileID: 8300000, guid: 9197c881396e8144ab3e8afb586972fd, type: 3}
 --- !u!1 &8795713899781381401
 GameObject:
   m_ObjectHideFlags: 0
