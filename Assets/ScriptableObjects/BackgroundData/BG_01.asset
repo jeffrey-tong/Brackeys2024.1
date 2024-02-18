@@ -29,6 +29,3 @@ MonoBehaviour:
   - characterData: {fileID: 11400000, guid: fc7d8baa3840a9a48bf25329ae6c9ef4, type: 2}
     backgroundColor: {r: 0.9811321, g: 0.09122318, b: 0, a: 1}
     backgroundObjectColor: {r: 0.5188679, g: 0.047735848, b: 0, a: 1}
-  - characterData: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
-    backgroundColor: {r: 0.9811321, g: 0.09122318, b: 0, a: 1}
-    backgroundObjectColor: {r: 0.5188679, g: 0.047735848, b: 0, a: 1}
