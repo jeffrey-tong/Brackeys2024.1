@@ -62,6 +62,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     // Events
     public event Action OnPlayerLanded;
+    public event Action OnPlayerJumped;
 
 
     private void Awake()
@@ -208,6 +209,7 @@ public class PlayerLocomotion : MonoBehaviour
             desiredVelocity.y = jumpInitialVelocity;
             m_Animator.SetTrigger(animJumpHash);
             isJumping = true;
+            OnPlayerJumped?.Invoke();
         }
 
         else
