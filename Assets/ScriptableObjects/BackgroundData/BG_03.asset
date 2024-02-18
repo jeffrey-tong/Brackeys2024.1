@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c0612f858507742a56e956a44a3265, type: 3}
+  m_Name: BG_03
+  m_EditorClassIdentifier: 
+  defaultColor: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
+  backgroundColors:
+  - characterData: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
+    backgroundColor: {r: 1, g: 0.55058116, b: 0, a: 1}
+    backgroundObjectColor: {r: 0.6509434, g: 0.37281054, b: 0.034213994, a: 1}
+  - characterData: {fileID: 11400000, guid: 67b07a679ff747f4c9932dc1fcdd1c83, type: 2}
+    backgroundColor: {r: 0, g: 0.7857888, b: 1, a: 1}
+    backgroundObjectColor: {r: 0, g: 0.44395116, b: 0.5660378, a: 1}
+  - characterData: {fileID: 11400000, guid: 2e70e6ad2edf68142a91eab4164814f5, type: 2}
+    backgroundColor: {r: 0.9584613, g: 0, b: 1, a: 1}
+    backgroundObjectColor: {r: 0.5867556, g: 0, b: 0.6132076, a: 1}
+  - characterData: {fileID: 11400000, guid: 8a9da12248a979f4596c3d411fa021c1, type: 2}
+    backgroundColor: {r: 0.011554956, g: 1, b: 0, a: 1}
+    backgroundObjectColor: {r: 0.0065483125, g: 0.5566038, b: 0, a: 1}
+  - characterData: {fileID: 11400000, guid: fc7d8baa3840a9a48bf25329ae6c9ef4, type: 2}
+    backgroundColor: {r: 0.9811321, g: 0.09122318, b: 0, a: 1}
+    backgroundObjectColor: {r: 0.5188679, g: 0.047735848, b: 0, a: 1}

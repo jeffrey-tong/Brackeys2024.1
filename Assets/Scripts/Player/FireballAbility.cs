@@ -7,6 +7,7 @@ public class FireballAbility : PlayerAbility
     private PlayerLocomotion m_Locomotion;
     [SerializeField] private Projectile fireballPrefab;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private AudioClip fireballSound;
 
     private void Awake()
     {
@@ -21,5 +22,6 @@ public class FireballAbility : PlayerAbility
     {
         Projectile fireballProjectile = Instantiate(fireballPrefab, firePoint.position, Quaternion.identity);
         fireballProjectile.Shoot(Vector2.right * m_Locomotion.GetPlayerFacing());
+        AudioManager.Instance.PlayAudioSFX(fireballSound);
     }
 }

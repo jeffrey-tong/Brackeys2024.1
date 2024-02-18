@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDeath : BaseTrigger
 {
+    [SerializeField] private AudioClip destructionSound;
     public override void Trigger(PlayerController player = null)
     {
         base.Trigger(player);
@@ -20,6 +21,7 @@ public class EnemyDeath : BaseTrigger
 
     private void OnDestroyed()
     {
+        AudioManager.Instance.PlayAudioSFX(destructionSound);
         Trigger();
         Destroy(gameObject);
     }

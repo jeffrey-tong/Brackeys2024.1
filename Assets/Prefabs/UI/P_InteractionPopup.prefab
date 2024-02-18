@@ -137,7 +137,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &2032630486580979079
 MonoBehaviour:
@@ -227,6 +227,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  popupSFX: {fileID: 8300000, guid: 9197c881396e8144ab3e8afb586972fd, type: 3}
 --- !u!1 &8795713899781381401
 GameObject:
   m_ObjectHideFlags: 0

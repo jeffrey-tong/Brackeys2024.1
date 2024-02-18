@@ -8,15 +8,8 @@ public class Door : BaseTrigger
     [Header("Components")]
     [SerializeField] private CharacterData CharDataSO;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
-
+    [SerializeField] private AudioClip doorEnteredClip;
     public static event Action<CharacterData> OnAnyDoorEntered;
-
-    public static Dictionary<CharacterColor, Color> DoorColorLookup = new Dictionary<CharacterColor, Color>()
-    {
-        {CharacterColor.GRAY, Color.gray },
-        {CharacterColor.BLUE, Color.blue },
-        {CharacterColor.RED, Color.red }
-    };
 
     private void Start()
     {
@@ -27,6 +20,7 @@ public class Door : BaseTrigger
     {
         Action FadeIn = () => SwapCharacter(controller);
         TransitionManager.Instance.DoFadeInOut(FadeIn, null);
+        if (doorEnteredClip != null) { AudioManager.Instance.PlayAudioSFX(doorEnteredClip); }
     }
 
     private void SwapCharacter(PlayerController controller)
@@ -50,9 +44,6 @@ public class Door : BaseTrigger
 
     private void UpdateDoorColor()
     {
-        if (CharDataSO != null && DoorColorLookup.ContainsKey(CharDataSO.color))
-        {
-            m_SpriteRenderer.color = DoorColorLookup[CharDataSO.color];
-        }
+        m_SpriteRenderer.color = CharDataSO.color;
     }
 }

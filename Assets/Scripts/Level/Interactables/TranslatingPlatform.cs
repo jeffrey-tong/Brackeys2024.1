@@ -10,11 +10,15 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
     [SerializeField] private Transform endTransform;
 
     [SerializeField] private PlayMode mode = PlayMode.Single;
+    private SpriteRenderer sr;
+    private BoxCollider2D boxCollider;
 
     [Header("Properties")]
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float duration = 0.5f;
     [SerializeField] private AnimationCurve translateCurve;
+    [SerializeField] private float platformLength;
+    [SerializeField] private float platformWidth;
 
     private Vector2 startPoint;
     private Vector2 endPoint;
@@ -27,10 +31,17 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
 
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+
         startPoint = new Vector2(startTransform.position.x, startTransform.position.y);
         endPoint = new Vector2(endTransform.position.x, endTransform.position.y);
 
         transform.position = isMovingToEnd ? startPoint : endPoint;
+
+        sr.size = new Vector2(platformLength, platformWidth);
+        boxCollider.size = new Vector2(platformLength, platformWidth);
+
     }
 
     private void Start()
@@ -95,11 +106,19 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
         // Apply the object's rotation to the Gizmos.matrix
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
 
-        // Draw the rotated wire cube
-        Gizmos.DrawWireCube(endTransform.position - transform.position, new Vector3(transform.localScale.x, transform.localScale.y, 0));
+        // Draw the wire cube
+        Gizmos.DrawWireCube(endTransform.position - transform.position, new Vector3(platformLength, platformWidth, 0));
 
         // Restore the original matrix
         Gizmos.matrix = originalMatrix;
+    }
+
+    private void OnValidate()
+    {
+        sr = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        sr.size = new Vector2(platformLength, platformWidth);
+        boxCollider.size = new Vector2(platformLength, platformWidth);
     }
 }
 

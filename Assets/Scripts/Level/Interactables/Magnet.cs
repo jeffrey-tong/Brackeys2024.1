@@ -110,7 +110,7 @@ public class Magnet : BaseInteractable
         SetupMagnet();
 
         transform.rotation = Quaternion.Euler(0f, 0f, (int)magnetDirection * 90f);
-        EditorUtility.SetDirty(this);
+        //EditorUtility.SetDirty(this);
     }
 
     private void OnDrawGizmos()

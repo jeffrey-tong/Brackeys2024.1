@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     public GameObject prefab;
-    public CharacterColor color;
+    public Color color;
 }
 
 public enum CharacterColor

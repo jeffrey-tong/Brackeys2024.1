@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 8346742438854251670, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
       propertyPath: CharDataSO
       value: 
-      objectReference: {fileID: 11400000, guid: fc7d8baa3840a9a48bf25329ae6c9ef4, type: 2}
+      objectReference: {fileID: 11400000, guid: 8a9da12248a979f4596c3d411fa021c1, type: 2}
     m_RemovedComponents:
     - {fileID: 1974848621471377786, guid: a0eac5203249b984aa4b1aea8ee0b510, type: 3}
     m_RemovedGameObjects: []
@@ -88,3 +88,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityCode: 9
   shrinkFactor: 0.5
+  shrinkFX: {fileID: 8300000, guid: aab1506cbe62ae34bacac048b8a3bf9f, type: 3}
+  shrinkVFX: {fileID: 6174402259485981899, guid: 3cd4149bd9c05874d82a1f9fcae2bd78, type: 3}
