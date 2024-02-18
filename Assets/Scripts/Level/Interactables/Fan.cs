@@ -68,7 +68,7 @@ public class Fan : BaseInteractable
         SetupFan();
 
         transform.rotation = Quaternion.Euler(0f, 0f, (int)fanDirection * 90f);
-        EditorUtility.SetDirty(this);
+        //EditorUtility.SetDirty(this);
     }
 
     private void OnDrawGizmos()

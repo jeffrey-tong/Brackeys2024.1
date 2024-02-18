@@ -94,3 +94,4 @@ MonoBehaviour:
   AbilityCode: 9
   fireballPrefab: {fileID: 8882688878035410043, guid: 313506737c84f884fbd22e158fe4985d, type: 3}
   firePoint: {fileID: 916277096471109256}
+  fireballSound: {fileID: 8300000, guid: 4bd54be7273a3714bbb3ecb6dd7ef21b, type: 3}
