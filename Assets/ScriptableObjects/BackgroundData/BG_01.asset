@@ -15,8 +15,8 @@ MonoBehaviour:
   defaultColor: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
   backgroundColors:
   - characterData: {fileID: 11400000, guid: 5df3e23f80c5c9e47989939edecae7d0, type: 2}
-    backgroundColor: {r: 1, g: 0.55058116, b: 0, a: 1}
-    backgroundObjectColor: {r: 0.6509434, g: 0.37281054, b: 0.034213994, a: 1}
+    backgroundColor: {r: 0.75780225, g: 0.9586321, b: 0.9716981, a: 1}
+    backgroundObjectColor: {r: 0.42352942, g: 0.7058824, b: 0.5137255, a: 1}
   - characterData: {fileID: 11400000, guid: 67b07a679ff747f4c9932dc1fcdd1c83, type: 2}
     backgroundColor: {r: 0, g: 0.7857888, b: 1, a: 1}
     backgroundObjectColor: {r: 0, g: 0.44395116, b: 0.5660378, a: 1}

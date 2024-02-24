@@ -40,11 +40,13 @@ public class PlayerCameraManager : MonoBehaviour
             //target.x += lookAhead;
         }
 
-        bool updateY = Mathf.Abs(desiredY-currentY) > deadZone.y;
+        bool updateY = Mathf.Abs(desiredY- (currentY)) > deadZone.y;
         if (updateY) 
         {
             target.y = desiredY;
         }
+
+        Debug.DrawLine(new Vector3(currentX, currentY), new Vector3(target.x, target.y));
 
         float translationX = Mathf.SmoothDamp(currentX, target.x, ref velocity.x, smoothTime.x);
         float translationY = Mathf.SmoothDamp(currentY, target.y, ref velocity.y, smoothTime.y);
@@ -63,8 +65,12 @@ public class PlayerCameraManager : MonoBehaviour
 
         Gizmos.color = new Color(1, 0, 0, 0.5f);
         Vector3 position = transform.position;
+        position.y -= (deadZone.y + offset.y / 2);
         position.z = m_FollowPlayer.transform.position.z;
         Gizmos.DrawCube(position, new Vector3(deadZone.x * 2, deadZone.y * 2, 0));
+
+        Gizmos.color = new Color(0, 1, 0, 0.5f);
+        Gizmos.DrawSphere(position, 0.25f);
     }
 
     private void OnValidate()

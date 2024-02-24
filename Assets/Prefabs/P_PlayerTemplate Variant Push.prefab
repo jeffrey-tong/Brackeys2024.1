@@ -87,8 +87,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityCode: 0
-  pushDistance: 0.5
+  pushDistance: 0.8
   pushForce: 10
+  yOffset: 1
+  moveStrength: 0.75
   moveableLayer:
     serializedVersion: 2
     m_Bits: 128

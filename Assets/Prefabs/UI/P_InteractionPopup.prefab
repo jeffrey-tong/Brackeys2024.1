@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupWindow: {fileID: 6039697966893896962}
-  yOffset: 2
+  yOffset: 3
   scaleDuration: 0.3
   scaleCurve:
     serializedVersion: 2

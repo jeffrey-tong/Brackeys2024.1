@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         if (m_Ability == null) m_Ability = GetComponent<PlayerAbility>();
 
         Current = this;
+
+        Application.targetFrameRate = 60;
     }
 
     private void Update()
