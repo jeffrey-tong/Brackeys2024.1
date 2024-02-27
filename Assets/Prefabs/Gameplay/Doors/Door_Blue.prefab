@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.885011, y: 1.9004503, z: 0}
-  m_LocalScale: {x: 3.5089023, y: 3.596412, z: 4.4876614}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8802372562860212811}
   m_Father: {fileID: 0}
@@ -135,18 +135,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021452546, y: 0.012871414}
+  m_Offset: {x: 0, y: -0.20397094}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.01, y: 1.14}
+    oldSize: {x: 0.51666665, y: 0.8233333}
     newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2455053, y: 1.279829}
+  m_Size: {x: 0.40985328, y: 0.28443676}
   m_EdgeRadius: 0
 --- !u!1001 &2332651855129500752
 PrefabInstance:
@@ -159,6 +159,14 @@ PrefabInstance:
     - target: {fileID: 503948475423541207, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: m_Name
       value: VFX_Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896334788300742189, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896334788300742189, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6518804010601537051, guid: 7212507dc7c44a94fb9804e826292473, type: 3}
       propertyPath: m_LocalPosition.x
