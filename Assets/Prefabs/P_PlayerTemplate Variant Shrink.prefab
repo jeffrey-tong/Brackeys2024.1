@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261053f4823ffb54f9f8023405c34a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AbilityCode: 9
+  AbilityCode: 304
   shrinkFactor: 0.5
   shrinkFX: {fileID: 8300000, guid: aab1506cbe62ae34bacac048b8a3bf9f, type: 3}
   shrinkVFX: {fileID: 6174402259485981899, guid: 3cd4149bd9c05874d82a1f9fcae2bd78, type: 3}

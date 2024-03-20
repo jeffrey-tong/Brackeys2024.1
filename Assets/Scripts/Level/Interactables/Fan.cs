@@ -27,7 +27,18 @@ public class Fan : BaseInteractable
         boxCollider = GetComponent<BoxCollider2D>();
         areaEffector = GetComponent<AreaEffector2D>();
 
-        SetupFan();
+        sr.color = Color.red;
+
+        if (isFanOn)
+        {
+            sr.color = Color.green;
+            areaEffector.enabled = true;
+        }
+        else
+        {
+            sr.color = Color.red;
+            areaEffector.enabled = false;
+        }
     }
 
     public override void Activate()
@@ -52,7 +63,19 @@ public class Fan : BaseInteractable
         boxCollider.size = new Vector2(fanLength, fanWidth);
 
         areaEffector.forceMagnitude = fanForce;
-        areaEffector.forceAngle = (int)fanMode * 180f;
+        // Calculate the base angle based on fanMode
+        float baseAngle = fanMode == FanMode.PUSH ? 0f : 180f;
+
+        // Calculate the total angle including the object's rotation
+        float totalAngle = baseAngle + ((int)fanDirection * 90f);
+
+        // Ensure the angle stays within 0-360 range
+        totalAngle %= 360f;
+        if (totalAngle < 0)
+            totalAngle += 360f;
+
+        // Set the force angle
+        areaEffector.forceAngle = totalAngle;
 
         transform.rotation = Quaternion.Euler(0f, 0f, (int)fanDirection * 90f);
 

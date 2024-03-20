@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactablesList: []
-  CharDataSO: {fileID: 11400000, guid: fc7d8baa3840a9a48bf25329ae6c9ef4, type: 2}
+  CharDataSO: {fileID: 11400000, guid: 67b07a679ff747f4c9932dc1fcdd1c83, type: 2}
   m_SpriteRenderer: {fileID: 3019755778530271576}
   doorEnteredClip: {fileID: 8300000, guid: ee3cc074627cd0546bdade4d36d58d42, type: 3}
 --- !u!61 &9142538861452221442

@@ -57,9 +57,9 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
         base.Activate();
         if (canInteract)
         {
+            if (mode == PlayMode.PingpongContinuous) mode = PlayMode.Single;
             canInteract = false;
             StartCoroutine(TranslateToPosition());
-            isMovingToEnd = !isMovingToEnd;
         }
         
     }
@@ -89,9 +89,12 @@ public class TranslatingPlatform : BaseInteractable, IVelocity
         }
 
         _velocity = Vector2.zero;
-        canInteract = true;
-
-        if(mode == PlayMode.Single)
+        if (mode == PlayMode.Pingpong)
+        {
+            isMovingToEnd = !isMovingToEnd;
+            canInteract = true;
+        }
+        if (mode == PlayMode.Single)
         {
             isMovingToEnd = !isMovingToEnd;
             StartCoroutine(TranslateToPosition());
@@ -131,4 +134,5 @@ public enum PlayMode
 {
     Single,
     Pingpong,
+    PingpongContinuous
 }

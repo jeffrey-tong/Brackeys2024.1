@@ -13,6 +13,6 @@ public class EndTrigger : BaseTrigger
 
     private void EndGame()
     {
-         TransitionManager.Instance.LoadScene("EndScene");
+         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

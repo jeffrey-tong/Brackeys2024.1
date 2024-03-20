@@ -38,4 +38,12 @@ public class BreakablePlatform : BaseInteractable
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

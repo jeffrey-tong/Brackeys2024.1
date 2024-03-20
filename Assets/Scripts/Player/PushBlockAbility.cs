@@ -6,9 +6,10 @@ public class PushBlockAbility : PlayerAbility
 {
     private PlayerLocomotion m_Locomotion;
 
-    [SerializeField] private float pushDistance = 0.5f;
+    [SerializeField] private float pushDistance = 2f;
     [SerializeField] private float pushForce = 10f;
     [SerializeField] private LayerMask moveableLayer;
+    private Vector3 yOffset = new Vector3(0f, 0.5f, 0f);
 
     private MoveableObject lastHitPushableObject;
 
@@ -29,7 +30,8 @@ public class PushBlockAbility : PlayerAbility
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right * m_Locomotion.GetXInput(), pushDistance, moveableLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + yOffset, transform.right * m_Locomotion.GetXInput(), pushDistance, moveableLayer);
+
         if (hit.collider != null)
         {
             MoveableObject pushObject = hit.collider.GetComponent<MoveableObject>();
@@ -47,7 +49,5 @@ public class PushBlockAbility : PlayerAbility
                 lastHitPushableObject = null;
             }
         }
-
-        Debug.DrawRay(transform.position, transform.right * m_Locomotion.GetXInput() * pushDistance, Color.red, 2.0f);
     }
 }

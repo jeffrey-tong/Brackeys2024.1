@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && currentTrigger != null)
         {
             currentTrigger.Trigger(this);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         if (m_Ability != null && Input.GetKeyDown(m_Ability.GetAbilityKey()) && m_Ability.CanPerformAbility())

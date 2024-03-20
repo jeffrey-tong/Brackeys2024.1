@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static UnityEngine.UI.ContentSizeFitter;
 
 public class Magnet : BaseInteractable
 {
@@ -31,6 +32,17 @@ public class Magnet : BaseInteractable
     {
         sr = GetComponent<SpriteRenderer>();
         pointEffector = GetComponent<PointEffector2D>();
+
+        if (isMagnetOn)
+        {
+            sr.color = Color.green;
+            pointEffector.enabled = true;
+        }
+        else
+        {
+            sr.color = Color.red;
+            pointEffector.enabled = false;
+        }
 
         SetupMagnet();
     }
@@ -64,9 +76,7 @@ public class Magnet : BaseInteractable
         }
         if (magnetBoxForceCollider.enabled)
         {
-            // Get all colliders within the box collider with offset
-            Collider2D[] boxColliders = Physics2D.OverlapBoxAll((Vector2)transform.position + magnetBoxForceCollider.offset, new Vector2(magnetLength, magnetWidth), 0f, pushableLayerMask);
-
+            Collider2D[] boxColliders = Physics2D.OverlapBoxAll((Vector2)transform.position + magnetBoxForceCollider.offset, new Vector2(magnetLength, magnetWidth), transform.eulerAngles.z, pushableLayerMask);
             // Process the results for the box collider
             foreach (Collider2D collider in boxColliders)
             {
@@ -109,7 +119,7 @@ public class Magnet : BaseInteractable
         pointEffector = GetComponent<PointEffector2D>();
         SetupMagnet();
 
-        transform.rotation = Quaternion.Euler(0f, 0f, (int)magnetDirection * 90f);
+        //transform.rotation = Quaternion.Euler(0f, 0f, (int)magnetDirection * 90f);
         //EditorUtility.SetDirty(this);
     }
 
