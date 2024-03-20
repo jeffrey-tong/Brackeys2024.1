@@ -172,6 +172,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
+      propertyPath: initialDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: dialogues.Array.data[0].dialogueText
       value: Toggle between mages by entering colored doors.
       objectReference: {fileID: 0}
@@ -417,16 +421,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
+      propertyPath: initialDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: dialogues.Array.data[0].dialogueText
       value: The blue mage can push blocks!
       objectReference: {fileID: 0}
     - target: {fileID: 6699552480334889063, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: m_Size.x
-      value: 9.38008
+      value: 6.565343
       objectReference: {fileID: 0}
     - target: {fileID: 6699552480334889063, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: m_Offset.x
-      value: 3.7866921
+      value: 5.194061
       objectReference: {fileID: 0}
     - target: {fileID: 8484762576997679102, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: m_Name

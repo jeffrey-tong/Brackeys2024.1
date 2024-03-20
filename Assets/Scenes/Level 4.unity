@@ -375,6 +375,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
+      propertyPath: initialDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459049122534231684, guid: 9f9c66c52d2f6d545bbd5ec5e0f45e36, type: 3}
       propertyPath: dialogues.Array.data[0].dialogueText
       value: Press 'Left Shift' to activate certain character abilities.
       objectReference: {fileID: 0}
