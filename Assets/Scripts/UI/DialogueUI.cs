@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private float normalTextSpeed = 0.03f;
     [SerializeField] private float fastTextSpeed = 0.01f;
     [SerializeField] private float fadeDuration = 0.2f;
+
+    private Queue<DialogueTrigger> dialogueQueue = new Queue<DialogueTrigger>();
 
     private Action DialogueComplete;
 
@@ -57,14 +60,34 @@ public class DialogueUI : MonoBehaviour
 
     private void Dialogue_TriggeredCallback(DialogueTrigger dialogue, Action OnDialogueComplete)
     {
-        dialogueText.SetText("");
-        DialogueComplete = OnDialogueComplete;
+        dialogueQueue.Enqueue(dialogue);
+        if(!isDialoguePlaying)
+        {
+            StartCoroutine(HandleNextDialogue());
+        }
+    }
 
-        StartCoroutine(HandleAllDialogue(dialogue));
+    private IEnumerator HandleNextDialogue()
+    {
+        while (dialogueQueue.Count > 0)
+        {
+            DialogueTrigger currentDialogueTrigger = dialogueQueue.Dequeue();
+
+            dialogueText.SetText("");
+            DialogueComplete = null;
+
+            StartCoroutine(HandleAllDialogue(currentDialogueTrigger));
+
+            yield return new WaitUntil(() => !isDialoguePlaying);
+
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     private IEnumerator HandleAllDialogue(DialogueTrigger dialogue)
     {
+        isDialoguePlaying = true;
+
         yield return new WaitForSecondsRealtime(dialogue.initialDelay);
 
         float timeElapsed = 0.0f;
@@ -76,8 +99,6 @@ public class DialogueUI : MonoBehaviour
 
         isDialoguePlaying = true;
         Show();
-
-        yield return null;
 
         foreach (Dialogue d in dialogue.GetAllDialogues())
         {
@@ -94,6 +115,8 @@ public class DialogueUI : MonoBehaviour
         isDialoguePlaying = false;
         Hide();
         DialogueComplete?.Invoke();
+
+        yield return new WaitWhile(() => isDialoguePlaying);
     }
 
     private IEnumerator HandleDialogue(Dialogue dialogue)
@@ -109,7 +132,7 @@ public class DialogueUI : MonoBehaviour
             }
 
             char letter = dialogue.dialogueText[i];
-            if (letter == "<"[0])
+            if (letter == '<')
             {
                 int begin = dialogue.dialogueText.IndexOf("<");
                 int end = dialogue.dialogueText.LastIndexOf(">");
@@ -126,7 +149,6 @@ public class DialogueUI : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(dialogue.hangTime);
-        yield return null;
     }
 
     private void Show()

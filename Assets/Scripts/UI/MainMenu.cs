@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -14,6 +15,6 @@ public class MainMenu : MonoBehaviour
 
     private void OnStartGameBtnClicked()
     {
-        TransitionManager.Instance.LoadScene(levelSceneName);
+        TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

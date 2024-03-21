@@ -57,6 +57,14 @@ public class TransitionManager : MonoBehaviour
         StartCoroutine(FadeIn(fadeInAction));
     }
 
+    public void LoadScene(int sceneId)
+    {
+        OnTransitionStarted?.Invoke();
+
+        Action fadeInAction = () => SceneManager.LoadScene(sceneId);
+        StartCoroutine(FadeIn(fadeInAction));
+    }
+
     private IEnumerator FadeIn(Action OnTransitionFinished)
     {
         fadeImg.blocksRaycasts = true;

@@ -3691,7 +3691,7 @@ TextureImporter:
         x: 1920
         y: 512
         width: 128
-        height: 128
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4210,13 +4210,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilesheet_complete_2X_194
+      name: BoundaryO
       rect:
         serializedVersion: 2
-        x: 2304
-        y: 384
-        width: 128
-        height: 128
+        x: 2305
+        y: 385
+        width: 126
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4672,13 +4672,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilesheet_complete_2X_216
+      name: BoundaryOn
       rect:
         serializedVersion: 2
-        x: 2304
-        y: 256
-        width: 128
-        height: 128
+        x: 2305
+        y: 257
+        width: 126
+        height: 126
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4951,7 +4951,7 @@ TextureImporter:
         x: 1152
         y: 128
         width: 128
-        height: 128
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4972,7 +4972,7 @@ TextureImporter:
         x: 1280
         y: 128
         width: 128
-        height: 128
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4993,7 +4993,7 @@ TextureImporter:
         x: 1408
         y: 128
         width: 128
-        height: 128
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5413,7 +5413,7 @@ TextureImporter:
         x: 1152
         y: 0
         width: 128
-        height: 128
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5434,7 +5434,7 @@ TextureImporter:
         x: 1280
         y: 0
         width: 128
-        height: 128
+        height: 119
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5455,7 +5455,7 @@ TextureImporter:
         x: 1408
         y: 0
         width: 128
-        height: 128
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5690,6 +5690,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BoundaryO: -1534573927
+      BoundaryOn: 1858220640
       destructable: 1178819108
       lever: 1289446846
       lever_off: 1313927077
@@ -5799,7 +5801,6 @@ TextureImporter:
       tilesheet_complete_2X_19: 1576472819
       tilesheet_complete_2X_190: 1733986249
       tilesheet_complete_2X_191: 1963517383
-      tilesheet_complete_2X_194: -1534573927
       tilesheet_complete_2X_195: -559800972
       tilesheet_complete_2X_196: -1165597073
       tilesheet_complete_2X_197: -870747960
@@ -5822,7 +5823,6 @@ TextureImporter:
       tilesheet_complete_2X_211: -817007850
       tilesheet_complete_2X_212: -848154401
       tilesheet_complete_2X_213: 1334255628
-      tilesheet_complete_2X_216: 1858220640
       tilesheet_complete_2X_217: -1628734904
       tilesheet_complete_2X_218: -1302334017
       tilesheet_complete_2X_219: 1786123747

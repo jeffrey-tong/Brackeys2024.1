@@ -12,8 +12,15 @@ public class EnemyDeath : BaseTrigger
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision);
         if (collision.CompareTag("Projectile"))
+        {
+            OnDestroyed();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
         {
             OnDestroyed();
         }

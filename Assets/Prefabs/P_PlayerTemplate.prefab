@@ -447,6 +447,14 @@ PrefabInstance:
       propertyPath: rightPosition
       value: 
       objectReference: {fileID: 2755599065875941660}
+    - target: {fileID: 8014815016276515656, guid: 5f77e0c2ae1d06748a5594e03fcabc36, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7cce8de95742465458d8e659584958e4, type: 2}
+    - target: {fileID: 8014815016276515656, guid: 5f77e0c2ae1d06748a5594e03fcabc36, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6510862771980062543, guid: 7cce8de95742465458d8e659584958e4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

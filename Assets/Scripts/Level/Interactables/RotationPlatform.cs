@@ -39,6 +39,12 @@ public class RotationPlatform : BaseInteractable
 
         sr.size = new Vector2(platformLength, platformWidth);
         boxCollider.size = new Vector2(platformLength, platformWidth);
+
+        if(rotationMode == RotationMode.CONTINUOUS)
+        {
+            rotateContinuousCoroutine = StartCoroutine(RotateContinuous());
+            isRotatingContinuous = true;
+        }
     }
 
     public override void Activate()
